@@ -49,7 +49,6 @@ function EventDetails() {
             <ul className="list-disc pl-4">
               <li><strong>Date:</strong> {event.date}</li>
               <li><strong>Location:</strong> {event.location}</li>
-              {/* Add more details as needed */}
             </ul>
           </div>
         </div>

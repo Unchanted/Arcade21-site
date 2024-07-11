@@ -11,7 +11,9 @@ function Contact() {
           <p className="mb-4">
             If you have any questions or need further information, please feel free to contact us. We are here to help and assist you in any way we can.
           </p>
-          <form>
+         <div className="container mx-auto py-8">
+            <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                 Name

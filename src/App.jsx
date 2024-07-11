@@ -7,23 +7,34 @@ import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import InteractiveButton from './components/InteractiveButton';
+import InteractiveCard from './components/InteractiveCard';
+import PageLoading from './components/PageLoading';
+import PageTransition from './components/PageTransition';
+import FloatingGradient from './components/FloatingGradient';
+import InteractiveSVG from './components/InteractiveSVG';
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/events/:id" element={<EventDetails />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
+      <div className="relative">
+        <FloatingGradient />
+        <InteractiveSVG />
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+              <Route path="/events" element={<PageTransition><Events /></PageTransition>} />
+              <Route path="/events/:id" element={<PageTransition><EventDetails /></PageTransition>} />
+              <Route path="/about-us" element={<PageTransition><AboutUs /></PageTransition>} />
+              <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </div>
+      <PageLoading />
     </Router>
   );
 }
